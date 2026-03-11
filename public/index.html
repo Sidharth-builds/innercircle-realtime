@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>InnerCircle ◯</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-900 h-screen flex items-center justify-center text-white">
+
+<div class="w-[1100px] h-[650px] bg-slate-800 rounded-xl shadow-2xl flex overflow-hidden">
+
+<div class="w-[260px] bg-slate-900 p-5 flex flex-col">
+
+<h2 class="text-xl font-bold mb-4">Users</h2>
+
+<ul id="users" class="space-y-2 flex-1 overflow-y-auto"></ul>
+
+</div>
+
+
+<div class="flex flex-col flex-1">
+
+<div class="bg-slate-700 px-6 py-4 flex items-center gap-3">
+
+<input
+id="username"
+placeholder="Enter username"
+class="bg-slate-800 p-2 rounded-lg outline-none"
+/>
+
+<button
+id="joinBtn"
+class="bg-indigo-500 hover:bg-indigo-600 px-4 py-2 rounded-lg">
+Join
+</button>
+
+<select
+id="room"
+class="bg-slate-800 p-2 rounded-lg">
+
+<option value="general">General</option>
+<option value="memes">Memes</option>
+
+</select>
+
+</div>
+
+
+<ul
+id="messages"
+class="flex-1 p-6 space-y-4 overflow-y-auto bg-slate-800">
+</ul>
+
+
+<div id="typing" class="text-sm text-gray-400 px-6 pb-2"></div>
+
+
+<div class="p-4 bg-slate-900 flex gap-3">
+
+<input
+id="messageInput"
+placeholder="Spill the tea..."
+class="flex-1 bg-slate-800 p-3 rounded-lg outline-none"
+/>
+
+<input
+type="file"
+id="imageInput"
+accept="image/*"
+class="hidden"
+/>
+
+<button
+onclick="document.getElementById('imageInput').click()"
+class="bg-slate-700 px-4 py-2 rounded-lg">
+📷
+</button>
+
+<button
+id="sendBtn"
+class="bg-indigo-500 hover:bg-indigo-600 px-5 py-3 rounded-lg font-semibold">
+Send
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div
+id="imagePreviewModal"
+class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center">
+
+<div class="bg-slate-800 p-6 rounded-xl flex flex-col items-center gap-4">
+
+<h2 class="text-lg font-semibold">Preview Image</h2>
+
+<img
+id="previewImage"
+class="max-h-[400px] rounded-lg shadow-lg"
+/>
+
+<div class="flex gap-3">
+
+<button
+id="sendImageBtn"
+class="bg-indigo-500 px-4 py-2 rounded-lg">
+Send
+</button>
+
+<button
+id="cancelImageBtn"
+class="bg-slate-600 px-4 py-2 rounded-lg">
+Cancel
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
